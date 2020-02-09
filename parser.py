@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from bs4 import BeautifulSoup as BS 
 import requests
 from datetime import date, datetime
@@ -38,7 +40,7 @@ for vac in html.find_all(class_='l-vacancy'):
     company = vac.div.div.strong.a.text
     for city in html.find_all(class_="cities"):
         citys = city.text
-    fullword = title + "," + company + "," + citys +"\n"
+    fullword = ''.join((title,"\t",company,"\t",citys,"\n")).encode('utf-8')
     csvWrite(fullword)
 
 r = requests.get(url2, headers=headers)
@@ -53,7 +55,7 @@ for vac in html.find_all(class_='l-vacancy'):
     company = vac.div.div.strong.a.text
     for city in html.find_all(class_="cities"):
         citys = city.text
-    fullword = title + "," + company + "," + citys +"\n"
+    fullword = ''.join((title,"\t",company,"\t",citys,"\n")).encode('utf-8')
     csvWrite(fullword)
 
 r = requests.get(url3, headers=headers)
@@ -68,7 +70,7 @@ for vac in html.find_all(class_='l-vacancy'):
     company = vac.div.div.strong.a.text
     for city in html.find_all(class_="cities"):
         citys = city.text
-    fullword = title + "," + company + "," + citys +"\n"
+    fullword = ''.join((title,"\t",company,"\t",citys,"\n")).encode('utf-8')
     csvWrite(fullword)
 
 r = requests.get(url4, headers=headers)
@@ -83,7 +85,7 @@ for vac in html.find_all(class_='l-vacancy'):
     company = vac.div.div.strong.a.text
     for city in html.find_all(class_="cities"):
         citys = city.text
-    fullword = title + "," + company + "," + citys +"\n"
+    fullword = ''.join((title,"\t",company,"\t",citys,"\n")).encode('utf-8')
     csvWrite(fullword)
 
 r = requests.get(url4, headers=headers)
@@ -98,7 +100,7 @@ for vac in html.find_all(class_='l-vacancy'):
     company = vac.div.div.strong.a.text
     for city in html.find_all(class_="cities"):
         citys = city.text
+    fullword = ''.join((title,"\t",company,"\t",citys,"\n")).encode('utf-8')
+    csvWrite(fullword)
     
     
-
-
